@@ -18,7 +18,7 @@
         </header>
         <nav class="nav" id="nav">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="#" id="home">Home</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropbtn">Menu</a>
                     <div class="dropdown-content">
@@ -765,6 +765,23 @@
 
     </div>
     <script>
+
+        // Function to handle active state
+function setActiveLink() {
+    const links = document.querySelectorAll('.nav li');
+
+    links.forEach(link => {
+        link.addEventListener('click', function() {
+            links.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+}
+
+// Call the function when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', setActiveLink);
+
+
         document.addEventListener('contextmenu', function(event) {
            event.preventDefault();
        });
